@@ -19,7 +19,7 @@ def askQuestions
     question = Questions.new
     
     if (@count != 1)
-      puts '----- NEW TURN -----'
+      puts '---- NEW TURN ----'
     end
     puts "Player 1: #{question.display}"
     print '> '
@@ -37,7 +37,7 @@ def askQuestions
   
   elsif @count % 2 == 0 && @player1.alive? && @player2.alive?
     question = Questions.new
-    puts '----- NEW TURN -----'
+    puts '---- NEW TURN ----'
     puts "Player 2: #{question.display}"
     print '> '
     answer = gets.chomp
@@ -50,18 +50,17 @@ def askQuestions
       @player2.lives -= 1
       puts "Player 2:  No! You are incorrect!"
       puts "P1: #{@player1.lives}/3 vs P2: #{@player2.lives}/3"
-    #   puts '----- NEW TURN -----'
     end
     askQuestions
   
   else 
     if !(@player1.alive?)
       puts "Player 2 wins the game! score of #{@player2.lives}/3"
-      puts '----- GAME OVER -----'
+      puts '---- GAME OVER ----'
       puts 'Good bye!'
     else
       puts "Player 1 wins the game! score of #{@player1.lives}/3"
-      puts '----- GAME OVER -----'
+      puts '---- GAME OVER ----'
       puts 'Farewell!' 
     end   
   end
